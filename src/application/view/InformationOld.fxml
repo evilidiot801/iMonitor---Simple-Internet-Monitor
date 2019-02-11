@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<GridPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.InfoController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <TabPane disable="true" visible="false">
+         <tabs>
+            <Tab closable="false" text="Ping">
+               <content>
+                  <VBox>
+                     <children>
+                        <HBox fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" spacing="16.0">
+                           <children>
+                              <ToggleButton maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="80.0" text="Start">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="startStop" />
+                                 </toggleGroup>
+                              </ToggleButton>
+                              <ToggleButton disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="80.0" selected="true" text="Pause" toggleGroup="$startStop" />
+                              <Button focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="80.0" text="Clear" />
+                              <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="0.0" HBox.hgrow="ALWAYS" />
+                              <ProgressIndicator fx:id="progress" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" visible="false" />
+                           </children>
+                           <padding>
+                              <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                           </padding>
+                        </HBox>
+                        <HBox fillHeight="false" spacing="15.0" VBox.vgrow="NEVER">
+                           <children>
+                              <HBox>
+                                 <children>
+                                    <Label text="Average Ping : " />
+                                    <Label fx:id="average" text="0" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label text="Highest Ping : " />
+                                    <Label fx:id="highest" text="0" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <Label fx:id="isWeb" text="Website : " />
+                                    <Label fx:id="conn" />
+                                 </children>
+                              </HBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="4.0" left="16.0" right="4.0" top="4.0" />
+                           </padding>
+                        </HBox>
+                        <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" scaleShape="false" vvalue="1.0" VBox.vgrow="ALWAYS">
+                           <content>
+                              <VBox fx:id="infoBox" spacing="16.0">
+                                 <padding>
+                                    <Insets left="16.0" right="16.0" top="16.0" />
+                                 </padding>
+                              </VBox>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </content>
+            </Tab>
+            <Tab text="Net Status">
+               <content>
+                  <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" scaleShape="false" vvalue="1.0">
+                     <content>
+                        <VBox spacing="16.0">
+                           <padding>
+                              <Insets left="16.0" right="16.0" top="16.0" />
+                           </padding>
+                        </VBox>
+                     </content>
+                  </ScrollPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <BorderPane disable="true" prefHeight="200.0" prefWidth="200.0" visible="false" />
+   </children>
+</GridPane>

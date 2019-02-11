@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.Net.NetTabController">
+   <tabs>
+      <Tab closable="false" text="Net Status">
+         <content>
+           <VBox>
+           <children>
+	            <HBox fillHeight="false" minHeight="-Infinity" minWidth="-Infinity" spacing="16.0">
+	               <children>
+	                  <ToggleButton fx:id="start" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleStart" prefWidth="60.0" text="Start" textAlignment="CENTER">
+	                     <toggleGroup>
+	                        <ToggleGroup fx:id="startStop" />
+	                     </toggleGroup>
+	                     <font>
+	                        <Font size="10.0" />
+	                     </font>
+	                  </ToggleButton>
+	                  <ToggleButton fx:id="stop" disable="true" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleStop" prefWidth="60.0" selected="true" text="Stop" toggleGroup="$startStop">
+	                     <font>
+	                        <Font size="10.0" />
+	                     </font></ToggleButton>
+	                  <Button fx:id="clear" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClear" prefWidth="60.0" text="Clear">
+	                     <font>
+	                        <Font size="10.0" />
+	                     </font></Button>
+	                  <Button fx:id="refresh" focusTraversable="false" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleRefresh" prefWidth="60.0" text="Refresh">
+	                     <font>
+	                        <Font size="10.0" />
+	                     </font></Button>
+	                  <Region maxHeight="-Infinity" minHeight="-Infinity" prefHeight="0.0" HBox.hgrow="ALWAYS" />
+	                  <ProgressIndicator fx:id="progress" focusTraversable="false" maxHeight="-Infinity" minHeight="-Infinity" prefHeight="25.0" visible="false" />
+	               </children>
+	               <padding>
+	                  <Insets left="4.0" right="4.0" top="4.0" />
+	               </padding>
+	            </HBox>
+	            <ScrollPane fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" scaleShape="false" vvalue="1.0" VBox.vgrow="ALWAYS">
+	               <content>
+	                  <VBox fx:id="infoBox" spacing="16.0">
+		                  <padding>
+		                     <Insets left="16.0" right="16.0" top="16.0" />
+		                  </padding>
+	                 </VBox>
+	               </content>
+	            </ScrollPane>
+            </children>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>

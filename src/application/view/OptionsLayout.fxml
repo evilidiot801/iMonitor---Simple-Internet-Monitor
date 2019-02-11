@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.*?>
+
+<GridPane id="optionsView" fx:id="optionsPane" minHeight="-Infinity" prefHeight="275.0" vgap="16.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.Ping.PingOptionsController">
+   <columnConstraints>
+      <ColumnConstraints minWidth="-Infinity" prefWidth="130.0" />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+      <RowConstraints minHeight="10.0" prefHeight="20.0" />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <TextField id="optionsPing" fx:id="number" stylesheets="@application.css" GridPane.columnIndex="1" />
+      <TextField id="optionsTime" fx:id="ping" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <Label text="Size of Packet" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+         <GridPane.margin>
+            <Insets right="16.0" />
+         </GridPane.margin>
+      </Label>
+      <TextField id="optionsSize" fx:id="size" styleClass="" stylesheets="@application.css" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Label text="Number of Pings" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+         <GridPane.margin>
+            <Insets right="16.0" />
+         </GridPane.margin>
+      </Label>
+      <StackPane style="-fx-border-color: lightgray; -fx-border-style: solid; -fx-border-width: 1px;" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS">
+         <children>
+            <Label id="optionsWarning" fx:id="warning" text="Label" textAlignment="CENTER" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" />
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" spacing="16.0" GridPane.columnSpan="2147483647" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3" GridPane.valignment="CENTER" GridPane.vgrow="NEVER">
+         <children>
+            <Button id="optionsOk" fx:id="okOptions" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleOkOptions" onInputMethodTextChanged="#handleOkOptions" prefWidth="80.0" text="Accept" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" HBox.hgrow="NEVER" />
+            <Button id="optionsCancel" fx:id="cancel" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleCancelOptions" prefWidth="80.0" text="Cancel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.valignment="CENTER" GridPane.vgrow="ALWAYS" HBox.hgrow="NEVER" />
+         </children>
+         <opaqueInsets>
+            <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+         </opaqueInsets>
+      </HBox>
+      <Label text="Time Between Pings" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+         <padding>
+            <Insets right="16.0" />
+         </padding>
+      </Label>
+   </children>
+   <padding>
+      <Insets left="32.0" right="32.0" top="16.0" />
+   </padding>
+</GridPane>

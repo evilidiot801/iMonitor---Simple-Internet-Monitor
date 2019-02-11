@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox minHeight="-Infinity" prefHeight="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.RootController">
+   <children>
+      <MenuBar>
+         <menus>
+            <Menu mnemonicParsing="false" text="File">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#handleUpdate" text="Update" />
+                  <MenuItem mnemonicParsing="false" onAction="#handlePrint" text="Print" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleHelp" text="Help" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleExit" text="Exit" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Ping">
+               <items>
+                  <CheckMenuItem fx:id="websiteItem" mnemonicParsing="false" onAction="#handleWebsite" selected="true" text="Website" />
+                  <CheckMenuItem fx:id="routerItem" mnemonicParsing="false" onAction="#handleRouter" text="Router" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleOptions" text="Options" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <HBox fillHeight="false" minWidth="-Infinity" prefWidth="600.0" spacing="16.0">
+         <children>
+            <ToggleButton fx:id="start" focusTraversable="false" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleStart" prefWidth="80.0" text="Start">
+               <toggleGroup>
+                  <ToggleGroup fx:id="startStop" />
+               </toggleGroup></ToggleButton>
+            <ToggleButton fx:id="stop" disable="true" focusTraversable="false" minWidth="-Infinity" mnemonicParsing="false" onAction="#handlePause" prefWidth="80.0" selected="true" text="Pause" toggleGroup="$startStop" />
+            <Button focusTraversable="false" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleClear" prefWidth="80.0" text="Clear" HBox.hgrow="NEVER" />
+            <Button focusTraversable="false" minWidth="-Infinity" mnemonicParsing="false" onAction="#handleExit" prefWidth="80.0" text="Exit" />
+            <Region HBox.hgrow="ALWAYS" />
+            <ProgressIndicator id="progress" fx:id="progress" minHeight="-Infinity" prefHeight="25.0" visible="false" HBox.hgrow="NEVER" />
+         </children>
+         <padding>
+            <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
