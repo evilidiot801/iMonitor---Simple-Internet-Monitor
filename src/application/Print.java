@@ -125,7 +125,10 @@ public class Print {
 					str += "<span class=\"netBlue bold\">"+s+"</span>";
 				}
 				else {
-					str += "<span>"+s+"</span><br/>";
+					if(s.contains(":"))
+						str += "<span><a href=\"http://www.google.com/search?q="+s+"\">"+s+"</a></span><br/>";
+					else
+						str += "<span>"+s+"</span><br/>";
 				}
 			}
 			str += "<br/>";
